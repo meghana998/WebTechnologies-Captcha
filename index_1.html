@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+  
+
+<head>
+  <meta charset="UTF-8">
+  
+   <title>Login & Sign Up Interface</title>
+
+        <style>
+            .sides{ margin:0; }
+            .left{ float:left; width:34%; height:29%; overflow:hidden; } 
+            .right{ float:left; width:32%; height:29%; overflow:hidden; }
+        </style>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+
+ <script src="js/jquery.min.js"></script>
+ 		<script>
+  var text= "";
+  var rand=Math.floor(Math.random() * 2);
+  var i=0;
+  var a=0;
+             var j=0;
+             var t=0;
+             var ind=0;
+             var ime="";
+             var str2=["buses","truck","bike","crosswalk","vehicles","crosswalks","bicycle","fire hydrant"];
+             var str="pics/";
+             var str1=["img0","img1","img2","img3","img4","img5","img6","img7","img8"];
+             var str3=["img10","img11","img12","img13","img14","img15","img16","img17","img18"];
+                var count=0;
+                var s=[0,0,0,0,0,0,0,0,0];
+                var s1=[0,0,0,0,0,0,0,0,0];
+                var res=[[1,2,5],[3,4,5,6,7],[3,4,5,6,7],[1,2,3],[4,5,6,7,8,9],[4,5,6,7],[2,5,6],[0,1,6]];
+            function validatei1(){
+                count=0;
+                t=0;
+                   for(j=0;j<s.length;j++){
+                       if(s[j]===1){
+                       t++;
+                    }
+                   } 
+                   for(j=0;j<res[ind].length;j++){
+                    if(s[res[ind][j]]===1){
+                        count++;
+                    }
+                    
+        }
+                   if((count===res[ind].length)&&(t===res[ind].length)){
+                       $("#imgc1").hide();
+                       a=1;
+                   }
+                   else{
+                    
+                       load();
+                   }
+           }
+                function validatei2(){
+                count=0;
+                t=0;
+                   for(j=0;j<s.length;j++){
+                       if(s1[j]===1){
+                       t++;
+                    }
+                   } 
+                   for(j=0;j<res[ind].length;j++){
+                    if(s1[res[ind][j]]===1){
+                        count++;
+                    }
+                    
+        }
+                   if((count===res[ind].length)&&(t===res[ind].length)){
+                     $("#imgc2").hide();
+                     a=1;
+                   }
+                   else{
+                    
+                        load();
+                   }
+                   
+           }
+           function load(){
+               for(j=0;j<s.length;j++){
+                       s[j]=0;
+                       s1[j]=0;
+                    }
+                    ind=Math.floor(Math.random() * 8);
+               document.getElementById("cat").value="Select images with "+str2[ind];
+               document.getElementById(str1[0]).src=str+str2[ind]+"/"+"1.png";
+               document.getElementById(str1[1]).src=str+str2[ind]+"/"+"2.png";
+               document.getElementById(str1[2]).src=str+str2[ind]+"/"+"3.png";
+               document.getElementById(str1[3]).src=str+str2[ind]+"/"+"4.png";
+               document.getElementById(str1[4]).src=str+str2[ind]+"/"+"5.png";
+               document.getElementById(str1[5]).src=str+str2[ind]+"/"+"6.png";
+               document.getElementById(str1[6]).src=str+str2[ind]+"/"+"7.png";
+               document.getElementById(str1[7]).src=str+str2[ind]+"/"+"8.png";
+               document.getElementById(str1[8]).src=str+str2[ind]+"/"+"9.png";
+               $("#0").animate({opacity:"1.0"},"fast");
+               $("#1").animate({opacity:"1.0"},"fast");
+               $("#2").animate({opacity:"1.0"},"fast");
+               $("#3").animate({opacity:"1.0"},"fast");
+               $("#4").animate({opacity:"1.0"},"fast");
+               $("#5").animate({opacity:"1.0"},"fast");
+               $("#6").animate({opacity:"1.0"},"fast");
+               $("#7").animate({opacity:"1.0"},"fast");
+               $("#8").animate({opacity:"1.0"},"fast");
+
+               
+               document.getElementById("cat1").value="Select images with "+str2[ind];
+               document.getElementById(str3[0]).src=str+str2[ind]+"/"+"1.png";
+               document.getElementById(str3[1]).src=str+str2[ind]+"/"+"2.png";
+               document.getElementById(str3[2]).src=str+str2[ind]+"/"+"3.png";
+               document.getElementById(str3[3]).src=str+str2[ind]+"/"+"4.png";
+               document.getElementById(str3[4]).src=str+str2[ind]+"/"+"5.png";
+               document.getElementById(str3[5]).src=str+str2[ind]+"/"+"6.png";
+               document.getElementById(str3[6]).src=str+str2[ind]+"/"+"7.png";
+               document.getElementById(str3[7]).src=str+str2[ind]+"/"+"8.png";
+               document.getElementById(str3[8]).src=str+str2[ind]+"/"+"9.png";
+                 $("#00").animate({opacity:"1.0"},"fast");
+               $("#01").animate({opacity:"1.0"},"fast");
+               $("#02").animate({opacity:"1.0"},"fast");
+               $("#03").animate({opacity:"1.0"},"fast");
+               $("#04").animate({opacity:"1.0"},"fast");
+               $("#05").animate({opacity:"1.0"},"fast");
+               $("#06").animate({opacity:"1.0"},"fast");
+               $("#07").animate({opacity:"1.0"},"fast");
+               $("#08").animate({opacity:"1.0"},"fast");
+       }
+   
+  $(document).ready(function(){
+               $("#captcha").hide();
+                $("#ref").hide();
+                $("#ans").hide();
+                $("#lbl1").hide();
+                 $("#captcha2").hide();
+                $("#regref").hide();
+                $("#regans").hide();
+                $("#lbl2").hide();
+                $("#imgc1").hide();
+                $("#imgc2").hide();
+                $("div").click(function(){
+                    
+                    if(i===0){
+                       $(this).animate({opacity:"0.4"},"fast");
+                       
+                     i=1;
+                     s[parseInt(this.id)]=1;
+                     s1[parseInt(this.id)]=1;
+                 }
+                 else{
+                     $(this).animate({opacity:"1.0"},"fast");
+                     i=0;
+                     s[parseInt(this.id)]=0;
+                     s1[parseInt(this.id)]=0;
+                 }
+		});
+        $('#check1').click(function(){
+               
+                if($('#check1').is(':checked'))
+                 {
+                  if(rand===0){
+                       load();
+		 $("#imgc1").show();
+                   }
+                    else{
+                  $("#captcha").show();
+                $("#ref").show();
+                $("#ans").show();
+                $("#lbl1").show();
+                    }
+                 }
+                 else{
+                     captcha1();
+		 $("#imgc1").hide();
+                   $("#captcha").hide();
+                $("#ref").hide();
+                $("#ans").hide();
+                $("#lbl1").hide();
+                  }
+           });
+        $('#check2').click(function(){
+                load();
+                if($('#check2').is(':checked'))
+                 {
+                    if(rand===0){
+                         load();
+                  $("#imgc2").show();
+                     }
+                     else{
+                         captcha1();
+                  $("#captcha2").show();
+                $("#regref").show();
+                $("#regans").show();
+                $("#lbl2").show();
+                   }
+                 
+                 }
+                 else{
+                   $("#imgc2").hide();
+                   $("#captcha2").hide();
+                $("#regref").hide();
+                $("#regans").hide();
+                $("#lbl2").hide();
+                  }
+           });
+ });
+             
+                                          function captcha1(){
+							text="";
+							  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                                                        for (var i = 0; i < 5; i++)
+    							text += possible.charAt(Math.floor(Math.random() * possible.length));
+						 document.getElementById("captcha").value = text;
+                                                 document.getElementById("captcha2").value = text;
+                                                  var letters = '0123456789ABCDEF';
+                                                  var color = '#';
+                                                  for (var i = 0; i < 6; i++) {
+                                                  color += letters[Math.floor(Math.random() * 16)];
+                                                              }
+                                                  $("#captcha").css("background",color);
+                                                  $("#captcha").css("font-size",28);
+                                                  
+                                                  $("#captcha2").css("background",color);
+                                                  $("#captcha2").css("font-size",28);
+                                           }
+                                          function validatet(){
+                                            
+ var p_re=new RegExp("^[A-Za-z][a-z0-9.-_!@#$%^&*]{6,20}$","g");
+ var e_re=new RegExp("[a-z0-9](@gmail.com)$","g");
+ 
+var p1=fl.password.value;
+var p2=fg.password.value;
+var p22=fg.cpass.value;
+var e1=fl.mail.value;
+var e2=fg.mail.value;
+if($('#check1').is(':checked')){
+if(!p1.match(p_re)){
+ alert("not valid pwd");
+ return false;
+}
+
+if(!e1.match(e_re)){
+ alert("not valid email"); 
+
+ return false;
+}
+}
+else if($('#check2').is(':checked')){
+if(!p2.match(p_re))
+ 
+{
+ alert("not valid pwd");
+ 
+ return false;
+}
+if(p22!==p2){
+    alert("password and confirm password do not match");
+    return false;
+}
+if(!e2.match(e_re))
+ {
+ alert("not valid email");
+ return false;
+}
+}
+else{
+    alert("please complete captcha");
+    return false;
+}
+
+                                                if(a===0){
+						if(fl.ans.value===text){
+                                                   
+							return true;
+                                                     }
+                                                else if(fg.regans.value===text){
+							return true;
+							}
+						else{
+                                                        captcha1();
+                                                        document.getElementById("ans").value = "";
+                                                        document.getElementById("regans").value = "";
+							return false;
+							}
+                                                  }
+                                                  else{
+                                                      return true;
+                                                      }
+                                             }
+           
+   </script>
+  
+</head>
+
+
+ <body onload="captcha1(); load();">
+
+
+  <section class="panel">
+
+   <ul class="panel__menu" id="menu">
+
+   <hr/>
+
+    <li id="signIn">
+     <a href="#" onclick="captcha1(); load();">Login</a>
+    </li>
+
+    <li id="signUp">
+     <a href="#" onclick="captcha1(); load();">Sign up</a>
+    </li>
+
+   </ul>
+
+   <section class="panel__wrap">
+
+    <section class="panel__box active" id="signInBox">
+
+     <form name="fl"  action="login" data-toggle="validator" method="Post">
+      <label>Email
+        <input type="email" name="mail" required/>
+      </label>
+
+      <label>Password
+          <input type="password" name="password" required/>
+      </label>
+
+      <label><input type="checkbox" id="check1"/> I'm not a bot</label>
+        <section id="imgc1"  style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0s, opacity 0.3s linear 0s; opacity: 1; visibility: visible; z-index: 2000000000; left: 106px; top: 200px; width:400px">
+        <section style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></section>
+        <section style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></section>
+        <section style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></section>
+        <section style="z-index: 2000000000; position: relative; width: 400px; height: 420px;">
+        <input type="text" id="cat" oncopy="return false"
+ readonly/>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="0">
+                <img id="img0">
+            </div>
+            <div class="left" id="1" >
+                 <img id="img1">
+            </div>
+            <div class="right" id="2" >
+                 <img id="img2">
+            </div>
+        </section>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="3">
+                 <img id="img3">
+            </div>
+            <div class="left" id="4">
+                 <img id="img4">
+            </div>
+            <div class="right" id="5">
+                 <img id="img5">
+            </div>
+        </section>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="6">
+                 <img id="img6">
+            </div>
+            <div class="left" id="7">
+                 <img id="img7">
+            </div>
+            <div class="right" id="8">
+                 <img id="img8">
+            </div>
+            <input type="button" value="refresh" onclick="load();">
+            <input type="button" value="submit" onclick="validatei1();">
+        </section>
+         
+        </section> 
+        </section>
+       <input type="text" id="captcha" oncopy="return false"
+ readonly/>
+       <input type="button" onclick="captcha1()" value="refresh" id="ref"/>
+       <label id="lbl1">Enter above text		<input type="text" name="ans" id="ans" onpaste="return false" /></label>
+      <input type="reset" style="float:left" value="reset" id="res"/>
+      <input type="submit" value="login" onclick="return validatet()"/>
+
+     </form>
+    </section>
+
+    <section class="panel__box" id="signUpBox">
+
+     <form name="fg"  method="Post" action="register" data-toggle="validator">
+      <label>Email
+          <input type="email" name="mail" required/>      </label>
+
+      <label>Password
+          <input type="password" name="password" required/>
+      </label>
+
+     <label>Confirm password
+        <input type="password" id="inputPasswordConfirm" name="cpass" data-match="#inputPassword" data-match-error="Whoops, these don't match" required/>
+      </label>
+
+      <label><input type="checkbox" id="check2" > I'm not a bot</label>
+      <section id="imgc2" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0s, opacity 0.3s linear 0s; opacity: 1; visibility: visible; z-index: 2000000000; left: 106px; top: 200px;">
+        <section style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></section>
+        <section style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></section>
+        <section style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></section>
+        <section style="z-index: 2000000000; position: relative; width: 400px; height: 420px;">
+       <input type="text" id="cat1" oncopy="return false"
+ readonly/>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="00">
+                <img id="img10">
+            </div>
+            <div class="left" id="01" >
+                 <img id="img11">
+            </div>
+            <div class="right" id="02" >
+                 <img id="img12">
+            </div>
+        </section>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="03">
+                 <img id="img13">
+            </div>
+            <div class="left" id="04">
+                 <img id="img14">
+            </div>
+            <div class="right" id="05">
+                 <img id="img15">
+            </div>
+        </section>
+        <section class="sides" style="width:365px;height=50px">
+            <div  class="left" id="06">
+                 <img id="img16">
+            </div>
+            <div class="left" id="07">
+                 <img id="img17">
+            </div>
+            <div class="right" id="08">
+                 <img id="img18">
+            </div>
+            <input type="button" value="refresh" onclick="load();">
+            <input type="button" value="submit" onclick="validatei2();">
+        </section>
+         
+        </section> 
+        </section>
+      <label><input type="text" id="captcha2" oncopy="return false"
+ readonly/></label>
+      <input type="button" onclick="captcha1()" value="refresh" id="regref"/>
+       <label id="lbl2">Enter above text		<input type="text" name="regans" id="regans" onpaste="return false" /></label>
+      <input type="reset" style="float:left" value="reset"/>
+      <input type="submit" value="register" onclick="return validatet()"/>
+
+     </form>
+    </section>
+
+   </section>
+  
+</section>
+
+  
+  
+
+    <script  src="js/index.js"></script>
+ 
+
+
+
+
+</body>
+
+
+</html>
